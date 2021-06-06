@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>WELCOME TO PRODUCT EDIT PAGE</h3>
+	<form th:action="@{/product/update}" method="POST"
+					th:object="${product}">
+		<pre>
+PRODUCT ID  : <input type="text" th:field="*{id}" readOnly="readOnly" />
+PRODUCT NAME  : <input type="text" th:field="*{prodName}" />
+PRODUCT BRAND : <input type="text" th:field="*{prodBrand}" />
+MADE IN       : <input type="text" th:field="*{prodMadeIn}" />
+PRODUCT PRICE : <input type="text" th:field="*{prodPrice}" />
+<input type="submit" value="Update">
+</pre>
+	</form>
+	<span th:text="${message}"></span>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<body>
+	<H3>WELCOME TO PRODUCT DATA PAGE</H3>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>PRODUCT NAME</th>
+			<th>PRODUCT BRAND</th>
+			<th>PRODUCT MADE IN</th>
+			<th>PRODUCT PRICE</th>
+			<th colspan="2">OPERATIONS</th>
+		</tr>
+		<tr th:each="ob:${list}">			
+		<td th:text="${ob.id}"></td>
+			<td th:text="${ob.prodName}"></td>
+			<td th:text="${ob.prodBrand}"></td>
+			<td th:text="${ob.prodMadeIn}"></td>
+			<td th:text="${ob.prodPrice}"></td>
+			<td><a th:href="@{/product/edit/{id}(id=${ob.id})}">EDIT</a></td>
+			<td><a th:href="@{/product/delete/{id}(id=${ob.id})}">DELETE</a></td>
+			</tr>
+	</table>
+</body>
+</html>

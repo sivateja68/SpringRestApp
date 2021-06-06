@@ -1,0 +1,18 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<body>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>LastName</th>
+			<th>Operations</th>
+		</tr>
+		<tr th:each="us:${lis}">
+			<td th:text=${us.id}></td>
+			<td th:text="${us.firstName}"></td>
+			<td th:text="${us.lastName}"></td>
+			<td><a th:href="@{/edit/{id}(id=${us.id})}">Edit</a></td>
+		</tr>
+	</table>
+</body>
+</html>

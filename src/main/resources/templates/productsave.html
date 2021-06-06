@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>WELCOME TO PRODUCT REGISTER PAGE</h3>
+	<form th:action="@{/product/save}" method="POST"
+					th:object="${product}">
+		<pre>
+PRODUCT NAME  : <input type="text" th:field="*{prodName}" />
+PRODUCT BRAND : <input type="text" th:field="*{prodBrand}" />
+MADE IN       : <input type="text" th:field="*{prodMadeIn}" />
+PRODUCT PRICE : <input type="text" th:field="*{prodPrice}" />
+<input type="submit" value="Add">
+</pre>
+	</form>
+	<span th:text="${message}"></span>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<fieldset>
+<body>
+	<h3>WELCOME TO PRODUCT REGISTER PAGE</h3>
+	<form th:action="@{/product/save}" method="POST"
+					th:object="${product}" class="form-horizontal">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="author">PRODUCT NAME</label>  
+  <div class="col-md-4">
+  <input id="author" th:field="*{prodName}" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="enable_display">PRODUCT BRAND</label>  
+  <div class="col-md-4">
+  <input id="enable_display" th:field="*{prodBrand}"  placeholder="PRODUCT BRAND" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="comment">PRODUCT MADE IN</label>  
+  <div class="col-md-4">
+  <input id="comment" th:field="*{prodMadeIn}" placeholder="PRODUCT MADE IN" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="approuved_by">PRODUCT PRICE</label>  
+  <div class="col-md-4">
+  <input id="approuved_by"  th:field="*{prodPrice}" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="text">
+    
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  </div>
+  </div>
+
+</form>
+</fieldset>
+<span th:text="${message}"></span>
+</body>
+</html>
